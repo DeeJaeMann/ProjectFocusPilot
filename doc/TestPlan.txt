@@ -1,0 +1,122 @@
+Generated from CoPilot 9/15/2025
+ProjectFocusPilot - TDD-Friendly Test Plan
+=============================================
+
+Overview
+--------
+This test plan outlines a TDD-friendly approach for testing the Virtual Assistant App built with C#.NET and Avalonia UI. It includes unit, integration, and manual tests, as well as future test considerations.
+
+TDD Principles
+--------------
+- Begin each feature with a failing test.
+- Write minimal code to pass the test.
+- Refactor for clarity and performance.
+- Repeat for each feature and bug fix.
+
+Unit Tests
+----------
+Motivational Quote API:
+- Test API response structure and content.
+- Test error handling for failed API calls.
+- Test caching mechanism (if applicable).
+
+Integration Tests
+------------------
+UI Rendering:
+- Test layout rendering across screen sizes.
+- Test component visibility and interaction.
+- Test theme switching (if supported).
+
+Manual Tests
+------------
+UI Responsiveness:
+- Test app responsiveness on various devices.
+- Test animation smoothness and transitions.
+- Test accessibility features (keyboard navigation, screen reader).
+
+OAuth Flow:
+- Test login and logout flows.
+- Test token refresh and expiration handling.
+- Test error messages for failed authentication.
+
+PROJECTFOCUSPILOT – PHASE 1 TEST PLAN (UPDATED)
+
+Testing Frameworks:
+- Unit Testing: xUnit
+- UI Testing: Avalonia Headless (via Avalonia.Headless package)
+
+------------------------------------------------------------
+TEST CATEGORIES
+------------------------------------------------------------
+
+1. UNIT TESTS (xUnit)
+Focus: ViewModels, services, and business logic
+
+Modules and Targets:
+- QuoteService: API call logic and error handling
+  - Use mocks such as HttpClientFactory or Moq
+- QuoteViewModel: Property binding and refresh logic
+  - Validate state changes and command execution
+- AppConfig: Initialization and environment detection
+  - Ensure correct config loading
+
+2. UI TESTS (Avalonia Headless)
+Focus: UI behavior without rendering a visible window
+
+Components and Targets:
+- MainWindow: Quote display and refresh button
+  - Simulate button click and verify quote text updates
+- Startup Flow: App launch sequence
+  - Validate window loads and bindings initialize
+- Error States: API failure UI feedback
+  - Ensure fallback message or error indicator appears
+
+3. INTEGRATION TESTS
+Focus: Service + ViewModel + UI interaction
+
+Scenarios:
+- Quote Refresh Cycle: End-to-end quote fetch and display
+  - Simulate refresh and validate UI and service sync
+- Offline Mode: No API response
+  - Ensure UI handles gracefully
+
+4. MANUAL TESTS (Optional for Phase 1)
+- Launch app on Windows and Linux
+- Resize window and verify layout responsiveness
+- Simulate slow API response and observe UI behavior
+
+------------------------------------------------------------
+TEST PROJECT SETUP
+------------------------------------------------------------
+
+- Create a separate test project: ProjectFocusPilot.Tests
+- Add references to:
+  - xUnit
+  - Avalonia.Headless
+  - Moq or NSubstitute for mocking
+- Use [Fact] and [Theory] attributes for xUnit test cases
+- Use TestApplicationBuilder from Avalonia.Headless for UI tests
+
+------------------------------------------------------------
+TEST PLAN MAINTENANCE
+------------------------------------------------------------
+
+- Store this file as: docs/TestPlan.txt
+- Link it in the README
+- Update with each milestone (e.g., v0.2.0 for calendar integration)
+
+Setup Instructions:
+-------------------
+- Install .NET SDK and xUnit CLI
+- Configure Avalonia Headless in test project
+- Use test runner: `dotnet test`
+- Ensure test environment mimics production settings
+
+Maintenance Notes:
+------------------
+- Review test coverage monthly
+- Update tests with each feature change
+- Archive deprecated tests in /tests/archive
+
+Note:
+This version supersedes earlier test plan assumptions. xUnit and Avalonia Headless are now the preferred tools for Phase 1 testing.

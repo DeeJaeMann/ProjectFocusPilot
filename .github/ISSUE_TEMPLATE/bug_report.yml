@@ -1,0 +1,54 @@
+# Template Version: v1.0.0
+# Last Updated: 2025-09-15
+
+name: 🐞 Bug Report
+description: Report a reproducible bug or unexpected behavior in ProjectFocusPilot.
+title: "[Bug] <brief description>"
+labels: [bug, priority: medium]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please fill out the details below so we can reproduce and fix it.
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, platform, Avalonia version, .NET version
+      placeholder: "Windows 11, Avalonia 11.0, .NET 8"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: What happened? What did you expect to happen?
+      placeholder: "When I click refresh, the quote doesn't update..."
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: List the steps to reproduce the bug.
+      placeholder: |
+        1. Launch app
+        2. Click 'Refresh Quote'
+        3. Observe error
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs or Screenshots
+      description: Paste logs or attach screenshots if available.
+      placeholder: "Exception: NullReferenceException in QuoteService.cs line 42"
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Low (minor issue, doesn't block usage)
+        - Medium (affects functionality, workaround available)
+        - High (blocks core functionality)
