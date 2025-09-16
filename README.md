@@ -18,6 +18,7 @@ C#.NET assistant app using Avalonia UI, focused on motivation and modular produc
 - Microsoft Graph & Google Calendar APIs
 - Optional: Azure AI, OpenAI, System.Speech
 
+#TODO - Change this section out for downloading the installer
 ## Getting Started
 1. Clone the repo
 2. Install dependencies
