@@ -35,4 +35,4 @@ Current Templates:
 See `.github/template_archive/` for previous versions.
 
 ## License
-None
+None - This software is not intended for redistribution or modification.
