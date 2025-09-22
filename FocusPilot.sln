@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.UI", "FocusPilot.UI\FocusPilot.UI.csproj", "{5206818C-F680-4314-931E-6BAE72C807C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.Core", "FocusPilot.Core\FocusPilot.Core.csproj", "{1AE9E739-F2FE-4BF8-8F7A-D60AA4A53253}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.Test", "FocusPilot.Test\FocusPilot.Test.csproj", "{F9813550-AC13-4CEA-B014-803932DDFE88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5206818C-F680-4314-931E-6BAE72C807C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5206818C-F680-4314-931E-6BAE72C807C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5206818C-F680-4314-931E-6BAE72C807C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5206818C-F680-4314-931E-6BAE72C807C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AE9E739-F2FE-4BF8-8F7A-D60AA4A53253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AE9E739-F2FE-4BF8-8F7A-D60AA4A53253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AE9E739-F2FE-4BF8-8F7A-D60AA4A53253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AE9E739-F2FE-4BF8-8F7A-D60AA4A53253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9813550-AC13-4CEA-B014-803932DDFE88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9813550-AC13-4CEA-B014-803932DDFE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9813550-AC13-4CEA-B014-803932DDFE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9813550-AC13-4CEA-B014-803932DDFE88}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
