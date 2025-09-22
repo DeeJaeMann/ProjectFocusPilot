@@ -1,7 +1,7 @@
-﻿using Avalonia;
-using System;
+﻿using System;
+using Avalonia;
 
-namespace FocusPilot.UI;
+namespace FocusPilot.UI.Desktop;
 
 sealed class Program
 {
