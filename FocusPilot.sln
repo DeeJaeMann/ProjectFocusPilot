@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.Core", "FocusPilot.Core\FocusPilot.Core.csproj", "{1AE9E739-F2FE-4BF8-8F7A-D60AA4A53253}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.Test", "FocusPilot.Test\FocusPilot.Test.csproj", "{F9813550-AC13-4CEA-B014-803932DDFE88}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FocusPilot.UI", "FocusPilot.UI", "{7C1E7A10-7270-4768-B74B-AF250E74FA6C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.UI", "FocusPilot.UI\FocusPilot.UI\FocusPilot.UI.csproj", "{C5D653CB-A99E-44EA-8CE3-31DC8C1612E5}"
@@ -18,6 +16,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.UI.Desktop", "FocusPilot.UI\FocusPilot.UI.Desktop\FocusPilot.UI.Desktop.csproj", "{AF3FB13B-4FD4-4B10-BFA3-A3B8F8586DC3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.UI.iOS", "FocusPilot.UI\FocusPilot.UI.iOS\FocusPilot.UI.iOS.csproj", "{344F9C67-A271-4798-8F9F-2D84A764469A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.Core.Test", "FocusPilot.Core.Test\FocusPilot.Core.Test.csproj", "{F7981549-1C96-4AED-B853-DC81898ED579}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.UI.Test", "FocusPilot.UI.Test\FocusPilot.UI.Test.csproj", "{247569B1-CFAE-4185-8F72-A0C172BB170D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,10 +34,6 @@ Global
 		{1AE9E739-F2FE-4BF8-8F7A-D60AA4A53253}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AE9E739-F2FE-4BF8-8F7A-D60AA4A53253}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AE9E739-F2FE-4BF8-8F7A-D60AA4A53253}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9813550-AC13-4CEA-B014-803932DDFE88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9813550-AC13-4CEA-B014-803932DDFE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9813550-AC13-4CEA-B014-803932DDFE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9813550-AC13-4CEA-B014-803932DDFE88}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C5D653CB-A99E-44EA-8CE3-31DC8C1612E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C5D653CB-A99E-44EA-8CE3-31DC8C1612E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5D653CB-A99E-44EA-8CE3-31DC8C1612E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -56,6 +54,14 @@ Global
 		{344F9C67-A271-4798-8F9F-2D84A764469A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{344F9C67-A271-4798-8F9F-2D84A764469A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{344F9C67-A271-4798-8F9F-2D84A764469A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7981549-1C96-4AED-B853-DC81898ED579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7981549-1C96-4AED-B853-DC81898ED579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7981549-1C96-4AED-B853-DC81898ED579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7981549-1C96-4AED-B853-DC81898ED579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{247569B1-CFAE-4185-8F72-A0C172BB170D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{247569B1-CFAE-4185-8F72-A0C172BB170D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{247569B1-CFAE-4185-8F72-A0C172BB170D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{247569B1-CFAE-4185-8F72-A0C172BB170D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C5D653CB-A99E-44EA-8CE3-31DC8C1612E5} = {7C1E7A10-7270-4768-B74B-AF250E74FA6C}
