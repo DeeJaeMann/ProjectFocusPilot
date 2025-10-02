@@ -11,6 +11,21 @@ namespace FocusPilot.UI.Test;
 
 public class WelcomeTest
 {
+    /// <summary>
+    /// Verifies that FocusPilot.UI.Test is connected to FocusPilot.UI by testing for the default template welcome message
+    /// </summary>
+    /// <remarks>
+    /// This test is just for validation of the test suite.
+    /// </remarks>
+    /// <example>
+    /// Example usage:
+    /// <code>
+    /// var window = new MainWindow { DataContext = new MainViewModel() };
+    /// window.Show();
+    /// var textBlock = window.GetVisualDescendants().OfType<TextBlock>().FirstOrDefault();
+    /// Assert.Equal("Welcome to Avalonia!", textBlock.Text);
+    /// </code>
+    /// </example>
     [AvaloniaFact]
     public void FirstTextBlockContainsWelcomeMessage()
     {
@@ -23,12 +38,12 @@ public class WelcomeTest
         window.Show();
         
         // Act: Find the TextBox by name or type
-        var textBox = window.GetVisualDescendants()
+        var textBlock = window.GetVisualDescendants()
             .OfType<TextBlock>()
             .FirstOrDefault();
         
         // Assert: Verify it contains the expected welcome text
-        Assert.NotNull(textBox);
-        Assert.Equal("Welcome to Avalonia!", textBox.Text);
+        Assert.NotNull(textBlock);
+        Assert.Equal("Welcome to Avalonia!", textBlock.Text);
     }
 }
