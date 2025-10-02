@@ -18,4 +18,8 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FocusPilot.Core\FocusPilot.Core.csproj" />
+  </ItemGroup>
+
 </Project>
