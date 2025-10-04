@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.Core.Test", "Foc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.UI.Test", "FocusPilot.UI.Test\FocusPilot.UI.Test.csproj", "{247569B1-CFAE-4185-8F72-A0C172BB170D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.UI.Console", "FocusPilot.UI.Console\FocusPilot.UI.Console.csproj", "{2ED04BB6-20AA-43BD-AFA7-BCB0E147A8C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{247569B1-CFAE-4185-8F72-A0C172BB170D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{247569B1-CFAE-4185-8F72-A0C172BB170D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{247569B1-CFAE-4185-8F72-A0C172BB170D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ED04BB6-20AA-43BD-AFA7-BCB0E147A8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ED04BB6-20AA-43BD-AFA7-BCB0E147A8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ED04BB6-20AA-43BD-AFA7-BCB0E147A8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ED04BB6-20AA-43BD-AFA7-BCB0E147A8C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C5D653CB-A99E-44EA-8CE3-31DC8C1612E5} = {7C1E7A10-7270-4768-B74B-AF250E74FA6C}
