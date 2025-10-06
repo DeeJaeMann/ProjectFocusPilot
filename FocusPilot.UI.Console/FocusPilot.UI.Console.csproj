@@ -9,10 +9,18 @@
 
     <ItemGroup>
       <ProjectReference Include="..\FocusPilot.Core\FocusPilot.Core.csproj" />
+      <ProjectReference Include="..\FocusPilot.Infrastructure.Quotes\FocusPilot.Infrastructure.Quotes.csproj" />
     </ItemGroup>
     
     <ItemGroup>
         <Using Include="System.Console" Static="True" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.0-rc.1.25451.107" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0-rc.1.25451.107" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.0-rc.1.25451.107" />
+      <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.0-rc.1.25451.107" />
     </ItemGroup>
 
 </Project>

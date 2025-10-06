@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.UI.Test", "Focus
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.UI.Console", "FocusPilot.UI.Console\FocusPilot.UI.Console.csproj", "{2ED04BB6-20AA-43BD-AFA7-BCB0E147A8C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.Infrastructure.Quotes", "FocusPilot.Infrastructure.Quotes\FocusPilot.Infrastructure.Quotes.csproj", "{F0F01EDB-BC9E-47B8-8A4A-836C855299C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FocusPilot.Infrastructure.Quotes.Test", "FocusPilot.Infrastructure.Quotes.Test\FocusPilot.Infrastructure.Quotes.Test.csproj", "{D8E19759-BA9B-4302-9EC2-9EB552A2074D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +72,14 @@ Global
 		{2ED04BB6-20AA-43BD-AFA7-BCB0E147A8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ED04BB6-20AA-43BD-AFA7-BCB0E147A8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ED04BB6-20AA-43BD-AFA7-BCB0E147A8C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0F01EDB-BC9E-47B8-8A4A-836C855299C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0F01EDB-BC9E-47B8-8A4A-836C855299C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0F01EDB-BC9E-47B8-8A4A-836C855299C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0F01EDB-BC9E-47B8-8A4A-836C855299C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8E19759-BA9B-4302-9EC2-9EB552A2074D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8E19759-BA9B-4302-9EC2-9EB552A2074D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8E19759-BA9B-4302-9EC2-9EB552A2074D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8E19759-BA9B-4302-9EC2-9EB552A2074D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C5D653CB-A99E-44EA-8CE3-31DC8C1612E5} = {7C1E7A10-7270-4768-B74B-AF250E74FA6C}
