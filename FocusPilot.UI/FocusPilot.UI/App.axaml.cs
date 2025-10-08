@@ -3,14 +3,20 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Avalonia.Markup.Xaml;
 using FocusPilot.UI.ViewModels;
 using FocusPilot.UI.Views;
+using FocusPilot.Core.Quotes;
+using FocusPilot.Infrastructure.Quotes;
 
 namespace FocusPilot.UI;
 
 public partial class App : Application
 {
+    public static IHost AppHost { get; private set; }
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -18,6 +24,21 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
+        // Load json config
+        AppHost = Host.CreateDefaultBuilder()
+            .ConfigureAppConfiguration(config =>
+            {
+                config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+            })
+            .ConfigureServices((context, services) =>
+            {
+                services.Configure<ZenQuotesClientOptions>(
+                    context.Configuration.GetSection("Quotes:ZenQuotes"));
+                services.AddHttpClient<IQuoteService, ZenQuotesClient>();
+                services.AddSingleton<MainViewModel>();
+            })
+            .Build();
+        
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 

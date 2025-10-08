@@ -21,9 +21,18 @@
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="Microsoft.Extensions.Http" />
   </ItemGroup>
     
     <ItemGroup>
         <ProjectReference Include="../../FocusPilot.Core/FocusPilot.Core.csproj" />
+        <ProjectReference Include="..\..\FocusPilot.Infrastructure.Quotes\FocusPilot.Infrastructure.Quotes.csproj" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <None Update="appsettings.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 </Project>
