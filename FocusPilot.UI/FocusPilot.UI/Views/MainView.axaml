@@ -12,5 +12,21 @@
     <vm:MainViewModel />
   </Design.DataContext>
 
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+  <!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/> -->
+  <StackPanel>
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right">Quote:</Label>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding QuoteText}" />
+        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right">Author:</Label>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding QuoteAuthor}" />
+      </Grid>
+  </StackPanel>
 </UserControl>
