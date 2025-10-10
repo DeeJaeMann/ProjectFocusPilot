@@ -1,11 +1,13 @@
+using System;
+using System.IO;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
+using Avalonia.Platform;
 using System.Linq;
-using Microsoft.Extensions.Configuration;
+using System.Text.Json;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Avalonia.Markup.Xaml;
 using FocusPilot.UI.ViewModels;
 using FocusPilot.UI.Views;
@@ -16,7 +18,7 @@ namespace FocusPilot.UI;
 
 public partial class App : Application
 {
-    public static IHost AppHost { get; private set; }
+    public static ServiceProvider AppServices { get; private set; }
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -24,20 +26,16 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        // Load json config
-        AppHost = Host.CreateDefaultBuilder()
-            .ConfigureAppConfiguration(config =>
-            {
-                config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-            })
-            .ConfigureServices((context, services) =>
-            {
-                services.Configure<ZenQuotesClientOptions>(
-                    context.Configuration.GetSection("Quotes:ZenQuotes"));
-                services.AddHttpClient<IQuoteService, ZenQuotesClient>();
-                services.AddSingleton<MainViewModel>();
-            })
-            .Build();
+        // Load embedded config
+        var options = LoadZenQuotesOptions();
+        
+        // Register services manually
+        var services = new ServiceCollection();
+        services.AddSingleton(options);
+        services.AddHttpClient<IQuoteService, ZenQuotesClient>();
+        services.AddSingleton<MainViewModel>();
+
+        AppServices = services.BuildServiceProvider();
         
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
@@ -47,7 +45,7 @@ public partial class App : Application
             desktop.MainWindow = new MainWindow
             {
                 //DataContext = new MainViewModel()
-                DataContext = AppHost.Services.GetRequiredService<MainViewModel>()
+                DataContext = AppServices.GetRequiredService<MainViewModel>()
             };
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
@@ -55,7 +53,7 @@ public partial class App : Application
             singleViewPlatform.MainView = new MainView
             {
                 //DataContext = new MainViewModel()
-                DataContext = AppHost.Services.GetRequiredService<MainViewModel>()
+                DataContext = AppServices.GetRequiredService<MainViewModel>()
             };
         }
 
@@ -74,4 +72,26 @@ public partial class App : Application
             BindingPlugins.DataValidators.Remove(plugin);
         }
     }
+
+    private ZenQuotesClientOptions LoadZenQuotesOptions()
+    {
+        //var assets = AvaloniaLocator.Current.GetService<IAssetLoader>();
+        var uri = new Uri("avares://FocusPilot.UI/appsettings.json");
+
+        //using var stream = assets.Open(uri);
+        using var stream = AssetLoader.Open(uri);
+        using var reader = new StreamReader(stream);
+        var json = reader.ReadToEnd();
+
+        var configRoot = JsonSerializer.Deserialize<JsonElement>(json);
+        var section = configRoot.GetProperty("Quotes").GetProperty("ZenQuotes");
+
+        return new ZenQuotesClientOptions
+        {
+            BaseUrl = section.GetProperty("BaseUrl").GetString() ?? "",
+            Timeout = TimeSpan.Parse(section.GetProperty("Timeout").GetString() ?? "00:00:10"),
+            ApiKey = section.GetProperty("ApiKey").GetString() ?? ""
+        };
+    }
+
 }

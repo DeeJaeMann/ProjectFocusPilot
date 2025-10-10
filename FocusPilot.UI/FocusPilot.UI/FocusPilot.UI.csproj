@@ -31,8 +31,6 @@
     </ItemGroup>
     
     <ItemGroup>
-        <None Update="appsettings.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
+        <AvaloniaResource Include="appsettings.json" />
     </ItemGroup>
 </Project>
