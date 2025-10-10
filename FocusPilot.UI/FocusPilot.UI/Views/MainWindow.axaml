@@ -6,7 +6,7 @@
         xmlns:views="clr-namespace:FocusPilot.UI.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="FocusPilot.UI.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="FocusPilot.UI">
+        Icon="/Assets/focuspilot-tmp.png"
+        Title="FocusPilot">
         <views:MainView />
 </Window>

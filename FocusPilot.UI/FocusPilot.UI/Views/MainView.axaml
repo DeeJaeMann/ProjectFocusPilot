@@ -11,22 +11,30 @@
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:MainViewModel />
   </Design.DataContext>
-
-  <!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/> -->
+  
+  <UserControl.Styles>
+    <Style Selector="TextBlock.quoteText">
+      <Setter Property="FontSize" Value="16" />
+      <Setter Property="FontStyle" Value="Italic" />
+    </Style>
+  </UserControl.Styles>
+  
   <StackPanel>
-      <Grid>
+      <Grid Margin="10, 10, 10, 10" ShowGridLines="True">
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="*" />
-          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
           <RowDefinition Height="Auto" />
           <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right">Quote:</Label>
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding QuoteText}" />
-        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right">Author:</Label>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding QuoteAuthor}" />
+        <Label Grid.Row="0" Grid.Column="0" Margin="0, 10, 10, 0" HorizontalAlignment="Right" Name="QuoteLabel">Quote:</Label>
+        <TextBlock Grid.Row="0" Grid.Column="1" Margin="10, 10, 0, 0" Classes="quoteText" Name="QuoteText" Text="{Binding QuoteText}" TextWrapping="Wrap"/>
+        <Label Grid.Row="1" Grid.Column="0" Margin="0, 10, 10, 0" HorizontalAlignment="Right" Name="AuthorLabel">Author:</Label>
+        <TextBlock Grid.Row="1" Grid.Column="1" Margin="10, 10, 0, 0" Name="AuthorText" Text="{Binding QuoteAuthor}" />
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="2, 2, 2, 2" HorizontalAlignment="Center" Content="Button" />
       </Grid>
   </StackPanel>
 </UserControl>
