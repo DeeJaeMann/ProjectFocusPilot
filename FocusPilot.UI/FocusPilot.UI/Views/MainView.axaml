@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:FocusPilot.UI.ViewModels"
+             xmlns:views="clr-namespace:FocusPilot.UI.Views"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="FocusPilot.UI.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -20,7 +21,8 @@
   </UserControl.Styles>
   
   <StackPanel>
-      <Grid Margin="10, 10, 10, 10" ShowGridLines="True">
+    <!--
+    <Grid Margin="10, 10, 10, 10" ShowGridLines="True">
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="*" />
           <ColumnDefinition Width="3*" />
@@ -36,5 +38,7 @@
         <TextBlock Grid.Row="1" Grid.Column="1" Margin="10, 10, 0, 0" Name="AuthorText" Text="{Binding QuoteAuthor}" />
         <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="2, 2, 2, 2" HorizontalAlignment="Center" Content="Button" />
       </Grid>
+      -->
+    <views:QuoteView DataContext="{Binding QuoteVm}"/>
   </StackPanel>
 </UserControl>

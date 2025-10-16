@@ -33,7 +33,8 @@ public partial class App : Application
         var services = new ServiceCollection();
         services.AddSingleton(options);
         services.AddHttpClient<IQuoteService, ZenQuotesClient>();
-        services.AddSingleton<MainViewModel>();
+        services.AddTransient<QuoteViewModel>();
+        services.AddTransient<MainViewModel>();
 
         AppServices = services.BuildServiceProvider();
         
