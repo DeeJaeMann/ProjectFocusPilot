@@ -40,5 +40,8 @@ public partial class QuoteViewModel : ViewModelBase
         QuoteAuthor = quote.Author;
         //Console.WriteLine($"QuoteText: {quote.Text}");
         //Console.WriteLine($"QuoteAuthor: {quote.Author}");
+        // Added delay to prevent sending too many requests per second to API
+        // Add exception handling if task is closed early
+        await Task.Delay(TimeSpan.FromSeconds(5));
     }
 }

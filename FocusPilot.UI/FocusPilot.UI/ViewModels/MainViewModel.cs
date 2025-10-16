@@ -10,7 +10,7 @@ namespace FocusPilot.UI.ViewModels;
 public partial class MainViewModel : ViewModelBase
 {
     [ObservableProperty]
-    private string _greeting = "Welcome to Avalonia!";
+    private string _greeting = "FocusPilot";
 
     public required IQuoteService QuoteService { get; init; }
 
