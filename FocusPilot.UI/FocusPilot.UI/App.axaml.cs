@@ -1,13 +1,13 @@
 using System;
 using System.IO;
+using System.Linq;
+using System.Text.Json;
+using Microsoft.Extensions.DependencyInjection;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Platform;
-using System.Linq;
-using System.Text.Json;
-using Microsoft.Extensions.DependencyInjection;
 using Avalonia.Markup.Xaml;
 using FocusPilot.UI.ViewModels;
 using FocusPilot.UI.Views;
