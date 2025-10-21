@@ -24,7 +24,7 @@ public class ZenQuotesClient : IQuoteService
     /// <inheritdoc />
     public async Task<QuoteDto> GetRandomQuoteAsync()
     {
-        try
+        try 
         {
             var response = await _httpClient.GetAsync($"{_options.BaseUrl}/random");
             response.EnsureSuccessStatusCode();

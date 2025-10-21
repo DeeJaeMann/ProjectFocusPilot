@@ -1,3 +1,3 @@
 ### Gets a random quote from ZenQuotes API
 GET https://zenquotes.io/api/random/
-Accept: applications/json
+Accept: application/json

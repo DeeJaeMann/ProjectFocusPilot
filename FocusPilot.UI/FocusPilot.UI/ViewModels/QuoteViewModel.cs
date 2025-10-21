@@ -12,9 +12,6 @@ namespace FocusPilot.UI.ViewModels;
 
 public partial class QuoteViewModel : ViewModelBase
 {
-    // From the default template
-    [ObservableProperty]
-    private string _greeting = "Welcome to Avalonia!";
 
     [ObservableProperty]
     private string? _quoteText;

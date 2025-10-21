@@ -14,10 +14,10 @@ public partial class QuoteView : UserControl
     {
         InitializeComponent();
 
-        this.DataContextChanged += (_, _) =>
-        {
-            Console.WriteLine($"QuoteView DataContext: {DataContext?.GetType().Name ?? "null"}");
-        };
+        // DataContextChanged += (_, _) =>
+        // {
+        //     Console.WriteLine($"QuoteView DataContext: {DataContext?.GetType().Name ?? "null"}");
+        // };
     }
     
 }
